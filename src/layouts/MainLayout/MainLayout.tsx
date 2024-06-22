@@ -15,7 +15,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import styles from './MainLayout.module.css';
 
 const drawerWidth = 240;
@@ -46,12 +46,15 @@ export default function MainLayout() {
       <List>
         {['Tasks', 'Completed', 'Calendar', 'Notes'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <Link className={styles.link} to={text.toLowerCase()}>
-              <ListItemButton>
+            <NavLink
+              className={(link) => (link.isActive ? `${styles.linkActive}` : `${styles.link}`)}
+              to={text.toLowerCase()}
+            >
+              <ListItemButton className={styles.button}>
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>
-            </Link>
+            </NavLink>
           </ListItem>
         ))}
       </List>
