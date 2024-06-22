@@ -39,6 +39,23 @@ export default function MainLayout() {
     }
   };
 
+  const getIcon = (text: string) => {
+    switch (text) {
+      case 'Tasks':
+        return <img src='/all-tasks.svg' width={24} height={24} alt='все задачи' />;
+        break;
+      case 'Completed':
+        return <img src='/completed.svg' width={24} height={24} alt='все задачи' />;
+        break;
+      case 'Calendar':
+        return <img src='/calendar.svg' width={24} height={24} alt='календарь' />;
+        break;
+      case 'Notes':
+        return <img src='/notes.svg' width={24} height={24} alt='заметки' />;
+        break;
+    }
+  };
+
   const drawer = (
     <div>
       <Toolbar />
@@ -51,7 +68,7 @@ export default function MainLayout() {
               to={text.toLowerCase()}
             >
               <ListItemButton className={styles.button}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemIcon>{getIcon(text)}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>
             </NavLink>
