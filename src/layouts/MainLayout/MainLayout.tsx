@@ -41,16 +41,12 @@ export default function MainLayout() {
     switch (text) {
       case 'Tasks':
         return <img src='/alltasks.svg' width={24} height={24} alt='все задачи' />;
-        break;
       case 'Completed':
         return <img src='/completed.svg' width={24} height={24} alt='все задачи' />;
-        break;
       case 'Calendar':
         return <img src='/calendar.svg' width={24} height={24} alt='календарь' />;
-        break;
       case 'Notes':
         return <img src='/notes.svg' width={24} height={24} alt='заметки' />;
-        break;
     }
   };
 
