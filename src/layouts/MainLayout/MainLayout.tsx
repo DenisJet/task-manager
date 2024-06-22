@@ -40,7 +40,7 @@ export default function MainLayout() {
   const getIcon = (text: string) => {
     switch (text) {
       case 'Tasks':
-        return <img src='/all-tasks.svg' width={24} height={24} alt='все задачи' />;
+        return <img src='/alltasks.svg' width={24} height={24} alt='все задачи' />;
         break;
       case 'Completed':
         return <img src='/completed.svg' width={24} height={24} alt='все задачи' />;
